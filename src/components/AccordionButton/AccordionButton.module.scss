@@ -1,0 +1,16 @@
+@import "../../styles/variables.scss";
+
+.accordionButton {
+  background-color: $main-blue;
+  cursor: pointer;
+  border: 1px solid $main-blue;
+  border-radius: $border-radius-12;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &Active {
+    background-color: $secondary-blue;
+  }
+}
