@@ -2,11 +2,25 @@ import { useState } from "react";
 import classes from "./FileComponent.module.scss";
 import { ClickAwayListener } from "../ClickAwayListener";
 
-export const FileComponent = ({ id, name, index, upperIndexesArray = [] }) => {
+export const FileComponent = ({
+  item,
+  index,
+  handleDragStart,
+  handleDragOver,
+  handleDrop,
+  upperIndexesArray = [],
+}) => {
+  const { name } = item;
   const [showMenu, setShowMenu] = useState(false);
 
   return (
-    <div className={classes.content}>
+    <div
+      className={classes.content}
+      draggable="true"
+      onDragStart={(event) => handleDragStart(event, {...item, upperIndexesArray})}
+      onDragOver={(event) => handleDragOver(event, item)}
+      onDrop={(event) => handleDrop(event, {...item,upperIndexesArray})}
+    >
       <div className={classes.innerContent}>
         <div>
           <div className={classes.label}>№</div>

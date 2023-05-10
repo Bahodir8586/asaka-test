@@ -5,12 +5,14 @@ import classes from "./FolderComponent.module.scss";
 import { ClickAwayListener } from "../ClickAwayListener";
 
 export const FolderComponent = ({
-  id,
-  name,
-  innerContent,
+  item,
   index,
+  handleDragStart,
+  handleDragOver,
+  handleDrop,
   upperIndexesArray = [],
 }) => {
+  const { name, innerContent } = item;
   const innerContentNames = useMemo(
     () => innerContent?.map((item) => item.name).join(", "),
     [innerContent]
@@ -20,7 +22,13 @@ export const FolderComponent = ({
   const [showMenu, setShowMenu] = useState(false);
 
   return (
-    <div className={classes.content}>
+    <div
+      className={classes.content}
+      draggable="true"
+      onDragStart={(event) => handleDragStart(event, {...item, upperIndexesArray})}
+      onDragOver={(event) => handleDragOver(event, item)}
+      onDrop={(event) => handleDrop(event, {...item,upperIndexesArray})}
+    >
       <div className={classes.innerContent}>
         <div>
           <div className={classes.label}>№</div>
@@ -78,7 +86,7 @@ export const FolderComponent = ({
       {showInnerItems && (
         <div>
           {innerContent?.map((item, i) =>
-            renderComponent(item, i + 1, [...upperIndexesArray, index])
+            renderComponent(item, i + 1, [...upperIndexesArray, index], handleDragStart, handleDragOver, handleDrop)
           )}
         </div>
       )}

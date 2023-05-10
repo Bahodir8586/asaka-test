@@ -1,13 +1,13 @@
-import { useState } from "react";
-
+import useDragAndDrop from "./hooks/useDragAndDrop";
 import { mockData } from "./data";
 import { renderComponent } from "./utils";
 
 const App = () => {
-  const [data, setData] = useState(mockData);
+  const { data, handleDragStart, handleDragOver, handleDrop } = useDragAndDrop(mockData);
+
   return (
     <div>
-      {data.map((item, index) => renderComponent(item, index+1, []))}
+      {data.map((item, index) => renderComponent(item, index+1, [], handleDragStart, handleDragOver, handleDrop))}
     </div>
   );
 };
