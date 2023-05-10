@@ -7,7 +7,7 @@ const App = () => {
   const [data, setData] = useState(mockData);
   return (
     <div>
-      {data.map((item, index) => renderComponent(item, index))}
+      {data.map((item, index) => renderComponent(item, index+1, []))}
     </div>
   );
 };
