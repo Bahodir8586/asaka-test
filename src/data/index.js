@@ -65,7 +65,7 @@ export const mockData=[
             },
             {
                 id:4,
-                name:"Inner Folder 1  of Folder 2",
+                name:"Inner Folder 12",
                 type:"folder",
                 innerContent: [
                     {
