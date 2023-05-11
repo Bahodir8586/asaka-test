@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/asaka-test/static/css/main.66cd52d5.css",
+    "main.js": "/asaka-test/static/js/main.c2e46dba.js",
+    "index.html": "/asaka-test/index.html",
+    "main.66cd52d5.css.map": "/asaka-test/static/css/main.66cd52d5.css.map",
+    "main.c2e46dba.js.map": "/asaka-test/static/js/main.c2e46dba.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.66cd52d5.css",
+    "static/js/main.c2e46dba.js"
+  ]
+}
