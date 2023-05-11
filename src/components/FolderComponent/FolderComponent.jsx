@@ -1,8 +1,14 @@
 import { useMemo, useState } from "react";
 
+import { PopupMenu } from "../PopupMenu";
+import { Cell } from "../Cell";
+import { CounterIndicator } from "../CounterIndicator";
+import { AccordionButton } from "../AccordionButton";
+
 import { renderComponent } from "../../utils";
+
 import classes from "./FolderComponent.module.scss";
-import { ClickAwayListener } from "../ClickAwayListener";
+
 
 export const FolderComponent = ({
   item,
@@ -19,74 +25,59 @@ export const FolderComponent = ({
   );
 
   const [showInnerItems, setShowInnerItems] = useState(false);
-  const [showMenu, setShowMenu] = useState(false);
 
   return (
     <div
       className={classes.content}
       draggable="true"
-      onDragStart={(event) => handleDragStart(event, {...item, upperIndexesArray})}
+      onDragStart={(event) =>
+        handleDragStart(event, { ...item, upperIndexesArray })
+      }
       onDragOver={(event) => handleDragOver(event, item)}
-      onDrop={(event) => handleDrop(event, {...item,upperIndexesArray})}
+      onDrop={(event) => handleDrop(event, { ...item, upperIndexesArray })}
     >
       <div className={classes.innerContent}>
         <div>
-          <div className={classes.label}>№</div>
-          <div className={classes.value}>
-            {[...upperIndexesArray, index].join(".")}
-          </div>
+          <Cell label={"№"} value={[...upperIndexesArray, index].join(".")} />
         </div>
         <div>
-          <div className={classes.label}>Название</div>
-          <div className={`${classes.value} ${classes.name}`}>
-            <img src={"/svgs/folder.svg"} alt="folder" />
-            <span>{name}</span>
-          </div>
+          <Cell
+            label={"Название"}
+            value={
+              <>
+                <img src={"/svgs/folder.svg"} alt="folder" />
+                <span>{name}</span>
+              </>
+            }
+            customValueClass={classes.name}
+          />
         </div>
         <div>
-          <div className={classes.label}>Очередность</div>
-          <div className={classes.value}>{index}</div>
+          <Cell label={"Очередность"} value={index} />
         </div>
         <div>
-          <div className={classes.label}>Подкатегории</div>
-          <div className={classes.value}>{innerContentNames}</div>
+          <Cell label={"Подкатегории"} value={innerContentNames} />
         </div>
         <div className={classes.settingsBox}>
-          <div className={classes.innerItemsNumber}>{innerContent.length}</div>
-          <button
-            className={`${classes.accordionButton} ${
-              showInnerItems && classes.activeAcBut
-            }`}
-            onClick={() => setShowInnerItems(!showInnerItems)}
-          >
-            <img
-              src={
-                !showInnerItems
-                  ? `/svgs/chevron-down.svg`
-                  : `/svgs/chevron-down-active.svg`
-              }
-              alt="down"
-            />
-          </button>
-          <ClickAwayListener onClickAway={() => setShowMenu(false)}>
-            <button
-              className={`${classes.menuButton} ${
-                showMenu && classes.activeMenBut
-              }`}
-              onClick={() => setShowMenu(!showMenu)}
-            >
-              <img
-                src={!showMenu ? `/svgs/dots.svg` : `/svgs/dots-active.svg`}
-                alt="down"
-              />
-            </button>
-          </ClickAwayListener>
+          <CounterIndicator value={innerContent.length} />
+          <AccordionButton
+            open={showInnerItems}
+            onClickHandler={() => setShowInnerItems(!showInnerItems)}
+          />
+          <PopupMenu />
         </div>
       </div>
       {showInnerItems && (
         <div>
           {innerContent?.map((item, i) =>
-            renderComponent(item, i + 1, [...upperIndexesArray, index], handleDragStart, handleDragOver, handleDrop)
+            renderComponent(
+              item,
+              i + 1,
+              [...upperIndexesArray, index],
+              handleDragStart,
+              handleDragOver,
+              handleDrop
+            )
           )}
         </div>
       )}

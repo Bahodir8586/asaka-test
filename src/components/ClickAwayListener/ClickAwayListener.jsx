@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 
 export const ClickAwayListener = ({ onClickAway, children }) => {
   const wrapperRef = useRef(null);
