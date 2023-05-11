@@ -22,11 +22,11 @@ export const PopupMenu = () => {
         </button>
         {showMenu && (
           <div className={classes.menuList}>
-            <button className={classes.menuListItem}>
+            <button className={classes.menuListItem} onClick={() => setShowMenu(!showMenu)}>
               <img src={"/svgs/edit-icon.svg"} alt="edit" />
               Редактировать
             </button>
-            <button className={classes.menuListItem}>
+            <button className={classes.menuListItem} onClick={() => setShowMenu(!showMenu)}>
               <img src={"/svgs/delete-icon.svg"} alt="delete" />
               Удалить
             </button>
