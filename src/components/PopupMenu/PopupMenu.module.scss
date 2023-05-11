@@ -1,0 +1,44 @@
+@import "../../styles/variables.scss";
+
+.menu {
+    position: relative;
+    &Button{
+      background-color: $white;
+  
+      cursor: pointer;
+      border: 1px solid $main-blue;
+      border-radius: $border-radius-12;
+      width: 2rem;
+      height: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &Active{
+          background-color: $main-blue;
+      }
+    }
+    &List{
+      position: absolute;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.06), 0px 2.79304px 5.32008px rgba(0, 0, 0, 0.0503198), 0px 1.16225px 2.21381px rgba(0, 0, 0, 0.07);
+      background-color: $white;
+      border-radius: $border-radius-12;
+      padding: 0.25rem;
+      z-index: 10;
+      right:0;
+      &Item{
+          border: none;
+          background-color: $white;
+          border-radius: $border-radius-8;
+          width: 100%;
+          padding: 0.5rem 1rem;
+          color: $main-gray;
+          cursor: pointer;
+          display: flex;
+          gap: 0.75rem;
+          align-items: center;
+          &:hover{
+              background-color: $secondary-blue;
+          }
+      }
+    }
+  }
