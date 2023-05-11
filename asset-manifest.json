@@ -1,13 +1,21 @@
 {
   "files": {
     "main.css": "/asaka-test/static/css/main.66cd52d5.css",
-    "main.js": "/asaka-test/static/js/main.c2e46dba.js",
+    "main.js": "/asaka-test/static/js/main.c27131d0.js",
     "index.html": "/asaka-test/index.html",
+    "static/media/edit-icon.svg": "/asaka-test/static/media/edit-icon.fd1bd8451d69096de86701879100ffee.svg",
+    "static/media/delete-icon.svg": "/asaka-test/static/media/delete-icon.3e9531bafcac84b7e1f94be63ed54ca6.svg",
+    "static/media/file.svg": "/asaka-test/static/media/file.5d0ffdb2eaf936bbd11224c3155a56f5.svg",
+    "static/media/dots.svg": "/asaka-test/static/media/dots.474a5c61982df18bb74755555d5ede28.svg",
+    "static/media/dots-active.svg": "/asaka-test/static/media/dots-active.c003f37a8bbc2e7928aa7db7e398b69d.svg",
+    "static/media/folder.svg": "/asaka-test/static/media/folder.9fb7de29f0f23897da2d2243f350806a.svg",
+    "static/media/chevron-down-active.svg": "/asaka-test/static/media/chevron-down-active.0245717403a6c574df88da598b91b176.svg",
+    "static/media/chevron-down.svg": "/asaka-test/static/media/chevron-down.b1a560ef2c0933abede4ae065f94b97a.svg",
     "main.66cd52d5.css.map": "/asaka-test/static/css/main.66cd52d5.css.map",
-    "main.c2e46dba.js.map": "/asaka-test/static/js/main.c2e46dba.js.map"
+    "main.c27131d0.js.map": "/asaka-test/static/js/main.c27131d0.js.map"
   },
   "entrypoints": [
     "static/css/main.66cd52d5.css",
-    "static/js/main.c2e46dba.js"
+    "static/js/main.c27131d0.js"
   ]
 }
