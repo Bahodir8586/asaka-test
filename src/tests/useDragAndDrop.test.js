@@ -63,7 +63,7 @@ describe("useDragAndDrop", () => {
     expect(result.current.data[0].innerContent[2].id).toBe(4);
   });
 
-  test("should not move item to a different parent folder", () => {
+  test("should not move item to a different level of parent folder", () => {
     const { result } = renderHook(() => useDragAndDrop(initialData));
 
     // Simulate dragging an item
