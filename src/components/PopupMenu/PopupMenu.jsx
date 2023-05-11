@@ -1,6 +1,10 @@
 import { useState } from "react";
 
 import { ClickAwayListener } from "../ClickAwayListener";
+import Dots from "../../assets/dots.svg";
+import DotsActive from "../../assets/dots-active.svg";
+import EditIcon from "../../assets/edit-icon.svg";
+import DeleteIcon from "../../assets/delete-icon.svg";
 
 import classes from "./PopupMenu.module.scss";
 
@@ -16,18 +20,18 @@ export const PopupMenu = () => {
           onClick={() => setShowMenu(!showMenu)}
         >
           <img
-            src={!showMenu ? `/svgs/dots.svg` : `/svgs/dots-active.svg`}
+            src={!showMenu ? Dots : DotsActive}
             alt="down"
           />
         </button>
         {showMenu && (
           <div className={classes.menuList}>
             <button className={classes.menuListItem} onClick={() => setShowMenu(!showMenu)}>
-              <img src={"/svgs/edit-icon.svg"} alt="edit" />
+              <img src={EditIcon} alt="edit" />
               Редактировать
             </button>
             <button className={classes.menuListItem} onClick={() => setShowMenu(!showMenu)}>
-              <img src={"/svgs/delete-icon.svg"} alt="delete" />
+              <img src={DeleteIcon} alt="delete" />
               Удалить
             </button>
           </div>

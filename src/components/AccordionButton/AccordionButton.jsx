@@ -1,4 +1,6 @@
 import classes from "./AccordionButton.module.scss";
+import ChevronDown from "../../assets/chevron-down.svg";
+import ChevronDownActive from "../../assets/chevron-down-active.svg";
 
 export const AccordionButton = ({open, onClickHandler}) => {
   return (
@@ -11,8 +13,8 @@ export const AccordionButton = ({open, onClickHandler}) => {
       <img
         src={
           !open
-            ? `/svgs/chevron-down.svg`
-            : `/svgs/chevron-down-active.svg`
+            ? ChevronDown
+            : ChevronDownActive
         }
         alt="down"
       />

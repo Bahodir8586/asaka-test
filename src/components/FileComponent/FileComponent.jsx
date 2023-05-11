@@ -1,5 +1,6 @@
 import { Cell } from "../Cell";
 import { PopupMenu } from "../PopupMenu";
+import FileIcon from "../../assets/file.svg";
 
 import classes from "./FileComponent.module.scss";
 
@@ -32,7 +33,7 @@ export const FileComponent = ({
             label={"Название"}
             value={
               <>
-                <img src={"/svgs/file.svg"} alt="file" />
+                <img src={FileIcon} alt="file" />
                 <span>{name}</span>
               </>
             }

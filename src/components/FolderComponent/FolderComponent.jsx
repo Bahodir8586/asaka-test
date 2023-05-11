@@ -4,6 +4,7 @@ import { PopupMenu } from "../PopupMenu";
 import { Cell } from "../Cell";
 import { CounterIndicator } from "../CounterIndicator";
 import { AccordionButton } from "../AccordionButton";
+import FolderIcon from "../../assets/folder.svg";
 
 import { renderComponent } from "../../utils";
 
@@ -45,7 +46,7 @@ export const FolderComponent = ({
             label={"Название"}
             value={
               <>
-                <img src={"/svgs/folder.svg"} alt="folder" />
+                <img src={FolderIcon} alt="folder" />
                 <span>{name}</span>
               </>
             }
