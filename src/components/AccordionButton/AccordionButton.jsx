@@ -1,4 +1,5 @@
 import classes from "./AccordionButton.module.scss";
+
 export const AccordionButton = ({open, onClickHandler}) => {
   return (
     <button
